@@ -1,0 +1,202 @@
+/* THIS IS MY stylesheet */
+
+body {
+  background-color: #FEE468;
+}
+
+.background img {
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 1;
+}
+/* /////////////////////// Special Scene //////////////////// */
+
+
+/* //////////////////////// Players setup ////////////////////*/
+.playerText {
+  position: absolute;
+  font-family: "Impact", Charcoal, sans-serif;
+  font-size: 60px;
+  z-index: 5;
+}
+
+.smallImg1 {
+  position: absolute;
+  height: 75px;
+  z-index: 4;
+}
+.smallImg1:hover {
+  cursor: pointer;
+}
+
+.smallImg2 {
+  position: absolute;
+  height: 75px;
+  z-index: 4;
+}
+.smallImg2:hover {
+  cursor: pointer;
+}
+
+.smallImg3 {
+  position: absolute;
+  height: 75px;
+  z-index: 4;
+}
+.smallImg3:hover {
+  cursor: pointer;
+}
+
+.smallImg4 {
+  position: absolute;
+  height: 75px;
+  z-index: 4;
+}
+.smallImg4:hover {
+  cursor: pointer;
+}
+
+.smallImg5 {
+  position: absolute;
+  height: 75px;
+  z-index: 4;
+}
+.smallImg5:hover {
+  cursor: pointer;
+}
+
+.smallImg6 {
+  position: absolute;
+  height: 75px;
+  z-index: 4;
+}
+.smallImg6:hover {
+  cursor: pointer;
+}
+
+/* ////////////////////// Middle ///////////////////////// */
+.check1 {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 200px;
+  left: 432px;
+}
+
+.check2 {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 200px;
+  left: 732px;
+}
+
+.checkBox {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 210px;
+}
+
+.midBox {
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  top: 570px;
+  left: 390px;
+  width: 500px;
+	height: 50px;
+	background: #FEE468;
+}
+
+/* ///////////////////////// buttonfx ////////////////////////// */
+
+
+.buttonfx{
+  color: black; /* button text color */
+  outline: none;
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid #eee;
+  letter-spacing: 0.0625em;
+  padding: 8px 10px;
+  text-transform: uppercase;
+  font: bold 16px 'Bitter', sans-serif; /* use google font */
+  line-height: 2;
+  position: relative;
+    display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+    text-decoration: none; /* remove underline if using A instead of BUTTON tag */
+  overflow: hidden;
+  transition: all .5s;
+}
+
+/* //// Default effect: Slide from Top  //// */
+
+.buttonfx:before,
+.buttonfx:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: #259f6c; /* onhover background color */
+  z-index: -1;
+  transform: translate3D(0,-100%,0); /* move elements above button so they don't appear initially */
+  transition: all .5s;
+}
+
+.buttonfx:before{
+  background: #fafcd6; /* button default background color */
+  z-index: -2;
+  transform: translate3D(0,0,0);
+}
+
+.buttonfx:hover{
+    color: white;
+}
+
+.buttonfx:hover:after{
+  transform: translate3D(0,0,0);
+  transition: all .5s;
+}
+
+/* ///////////////////////// Double Take  //////////////////////// */
+
+.doubletake:before,
+.doubletake:after{
+  width: 200%;
+  background: #FB393E;
+  transform-origin: 0 bottom;
+  transform: translate3D(-50%,0,0) rotate(-50deg);
+  z-index: 5;
+}
+
+.doubletake:before{
+  opacity: .4;
+  z-index: 5;
+}
+
+.doubletake:hover:before,
+.doubletake:hover:after{
+  transform: rotate(0deg);
+  transition: all .25s;
+  z-index: 5;
+}
+
+.doubletake:hover:after{
+  transition-delay: .25s;
+  z-index: 5;
+}
+/* */
+
+.buttonfx,
+.doubletake {
+  float: left;
+  position: absolute;
+  z-index: 5;
+}

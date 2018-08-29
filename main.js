@@ -111,6 +111,10 @@ function ready() {
                                       $(".fightText").animate({opacity: 1.0, 'z-index': 52}, 200);
                                       $(".fightText").animate({opacity: 0.0, 'z-index': 52}, 200);
                                       $(".fightText").animate({opacity: 1.0, 'z-index': 52}, 200);
+                                      $(".fightText").animate({opacity: 0.0, 'z-index': 52}, 200);
+                                      $(".fightText").animate({opacity: 1.0, 'z-index': 52}, 200);
+                                      $(".fightText").animate({opacity: 0.0, 'z-index': 52}, 200);
+                                      $(".fightText").animate({opacity: 1.0, 'z-index': 52}, 200);
                                     }, 2300);
           var left;
           var right;
@@ -136,25 +140,94 @@ function ready() {
               right = "photos/scissorsRight.png";
             }
           }
+
+          // who won
+          var winner = null;
+          if(players[0] === 'rock' && players[1] === 'paper') {
+            winner = 'Player 2 Wins!';
+          } else if(players[0] === 'paper' && players[1] === 'rock') {
+            winner = 'Player 1 Wins!';
+          } else if(players[0] === 'rock' && players[1] === 'rock') {
+            winner = 'Tie!';
+          } else if(players[0] === 'paper' && players[1] === 'paper') {
+            winner = 'Tie!';
+          } else if(players[0] === 'paper' && players[1] === 'scissors') {
+            winner = 'Player 2 Wins!';
+          } else if(players[0] === 'scissors' && players[1] === 'paper') {
+            winner = 'Player 1 Wins!';
+          } else if(players[0] === 'scissors' && players[1] === 'scissors') {
+            winner = 'Tie!';
+          } else if(players[0] === 'scissors' && players[1] === 'rock') {
+            winner = 'Player 2 Wins!';
+          } else if(players[0] === 'rock' && players[1] === 'scissors') {
+            winner = 'Player 1 Wins!';
+          } else {
+            winner = 'error 22'
+          }
+
           //prepend to .fight
-          var i = 3;
-          var time = 1000;
+
+          setTimeout(function(){
+                                $("<div class='winner'>" + winner + "</div>").appendTo("#fight");
+                                $(".winner").animate({opacity: 1.0}, 400);
+                                $(".winner").animate({opacity: 0.0}, 400);
+                                $(".winner").animate({opacity: 1.0}, 400);
+                                $(".winner").animate({opacity: 0.0}, 400);
+                                $(".winner").animate({opacity: 1.0}, 400);
+                                $(".winner").animate({opacity: 0.0}, 400);
+                                $(".winner").animate({opacity: 1.0}, 400);
+                                $(".winner").animate({opacity: 0.0}, 400);
+                                $(".winner").animate({opacity: 1.0}, 400);
+                                $(".winner").animate({opacity: 0.0}, 400);
+                                $(".winner").animate({opacity: 1.0}, 400);
+                                $(".winner").animate({opacity: 0.0}, 400);
+                                $(".winner").animate({opacity: 1.0}, 400);
+                                $(".winner").animate({opacity: 0.0}, 400);
+                                $(".winner").animate({opacity: 1.0}, 400);
+                              }, 5500);
+
+                                var tLeft = left;
+                                var tRight = right;
+                                left = "photos/rockLeft.png";
+                                right = "photos/rockRight.png";
+
           setTimeout(function(){
 
-                                  while(i > 0){
-                                    setTimeout(function(){
-                                    $("<div class=num>" + i + "</div>").appendTo("#fight");
-                                    $(".num").animate({opacity: 1.0}, 400);
-                                    $(".num").animate({opacity: 1.0}, 400);
-                                    }, time)
-                                    time = time + 1000;
-                                    i--;
-                                  }
-                                }, 3000);
-          setTimeout(function(){
-                                $("<img src=" + left + " style='left: 0px; top: 100px; z-index: 53; width: 300px; position:absolute;' >").appendTo("#fight");
-                                $("<img src=" + right + " style='left: 960px; top: 100px; z-index: 53; width: 300px; position: absolute;' >").appendTo("#fight");
-                              }, 6000);
+                                $("<img class='leftHand' src=" + left + " style='left: 0px; top: 100px; z-index: 53; width: 300px; position:absolute;' >").appendTo("#fight");
+                                $("<img class='rightHand'src=" + right + " style='left: 970px; top: 100px; z-index: 53; width: 300px; position: absolute;' >").appendTo("#fight");
+// left shake
+                                setTimeout(function(){
+                                  $(".leftHand").animate({top: '400px'}, 200);
+                                  $(".leftHand").animate({top: '100px'}, 200);
+                                  $(".leftHand").animate({top: '400px'}, 200);
+                                  $(".leftHand").animate({top: '100px'}, 200);
+                                  $(".leftHand").animate({top: '400px'}, 200);
+                                  $(".leftHand").animate({top: '100px'}, 200);
+                                  $(".leftHand").animate({top: '400px'}, 200);
+                                },1000)
+// right shake
+                                setTimeout(function(){
+                                  $(".rightHand").animate({top: '400px'}, 200);
+                                  $(".rightHand").animate({top: '100px'}, 200);
+                                  $(".rightHand").animate({top: '400px'}, 200);
+                                  $(".rightHand").animate({top: '100px'}, 200);
+                                  $(".rightHand").animate({top: '400px'}, 200);
+                                  $(".rightHand").animate({top: '100px'}, 200);
+                                  $(".rightHand").animate({top: '400px'}, 200);
+                                },999)
+// hands reveal
+                                setTimeout(function(){
+                                                      $(".leftHand").attr("src", tLeft);
+                                                      $(".rightHand").attr("src", tRight);
+                                                      $(".winner").remove();
+                                                    },2700)
+
+                                setTimeout(function(){
+                                                      $("<div class='winner' style='top:300px; height:200px; left: 365px; width:700px; '> Reload page to play again! </div>").appendTo("#fight");
+                                                    },4000)
+
+                              }, 2000);
+
 
 
 

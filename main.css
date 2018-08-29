@@ -10,7 +10,7 @@ body {
   z-index: 1;
 }
 /* /////////////////////// Special Scene //////////////////// */
-.num {
+.winner {
   position: absolute;
   font-size: 60px;
   color: white;
@@ -18,9 +18,9 @@ body {
   z-index: 55;
   opacity: 0.0;
   top: 200px;
-  left: 600px;
-  height: 300px;
-  width: 300px;
+  left: 465px;
+  height: 500px;
+  width: 500px;
 }
 
 .fightText {

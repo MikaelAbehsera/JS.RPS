@@ -193,8 +193,8 @@ function ready() {
 
           setTimeout(function(){
 
-                                $("<img class='leftHand' src=" + left + " style='left: 0px; top: 100px; z-index: 53; width: 300px; position:absolute;' >").appendTo("#fight");
-                                $("<img class='rightHand'src=" + right + " style='left: 970px; top: 100px; z-index: 53; width: 300px; position: absolute;' >").appendTo("#fight");
+                                $("<img class='leftHand' src=" + left + " style='left: -10px; top: 100px; z-index: 53; width: 300px; position:absolute;' >").appendTo("#fight");
+                                $("<img class='rightHand'src=" + right + " style='right: 0px; top: 100px; z-index: 53; width: 300px; position: absolute;' >").appendTo("#fight");
 // left shake
                                 setTimeout(function(){
                                   $(".leftHand").animate({top: '400px'}, 200);

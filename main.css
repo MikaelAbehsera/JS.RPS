@@ -10,7 +10,50 @@ body {
   z-index: 1;
 }
 /* /////////////////////// Special Scene //////////////////// */
+.num {
+  position: absolute;
+  font-size: 60px;
+  color: white;
+  font-family: "Impact", Charcoal, sans-serif;
+  z-index: 55;
+  opacity: 0.0;
+  top: 200px;
+  left: 600px;
+  height: 300px;
+  width: 300px;
+}
 
+.fightText {
+  position: absolute;
+  color: white;
+  font-size: 45px;
+  opacity: 0.0;
+  left: 468px;
+  font-family: "Impact", Charcoal, sans-serif;
+  z-index: 0;
+}
+
+.battleGround {
+  position: absolute;
+  width: 1282px;
+  height: 728px;
+  top: -10px;
+  left: -10px;
+  background: black;
+  opacity: 0.0;
+  z-index: 0;
+}
+
+.shock {
+    position: absolute;
+    width: 1262px;
+    height: 728px;
+    top: -10px;
+    left: -10px;
+    background: white;
+    opacity: 0.0;
+    z-index: 0;
+}
 
 /* //////////////////////// Players setup ////////////////////*/
 .playerText {

@@ -1,5 +1,31 @@
 $(document).ready(function() {
 
+//delete this after ---> $( "." ).prepend( "" );
+//make players and its contents
+  //make players main div
+  $(".background").prepend("<div class='players' style='width:100%; height:100%;'></div>");
+  //make "players" text div and append to players main
+  $( ".players" ).prepend("<div class='playerText' style='z-index: 1; text-align: center; height: 100%; width: 100%; top:10%; font-size: 6vw;'>Players </div>");
+  // make check 1 and prepend to players main + make check 2 and prepend to players main
+  $( ".players" ).prepend("<div> <img class='check1' src='photos/checkMark.png'> <img class='check2' src='photos/checkMark.png'> </div>");
+  //make div for img call it "checkBoxImg" and prepend to players main
+  $( ".players" ).prepend('<div class="img1" style="height: 100%; width: 100%;"> <img class="checkBox" style="left: 40%;" src="photos/checkBox.png"></div>');
+  $( ".players" ).prepend('<div class="img2" style="height: 100%; width: 100%;"> <img class="checkBox" style="left: 55%;" src="photos/checkBox.png"></div>')
+  // make mid box and its contents prepend all to players main
+  $( ".players" ).prepend( "<div class='midDiv' style='height: 100%; width: 100%; position:absolute;' ></div>" );
+  $( ".midDiv" ).prepend( "<div class='midBox' style='' ></div>" );
+      //choose text + prepend to mid box div
+      $( ".midBox" ).prepend( '<div class="playerText" id="choose" style="text-align: center; font-size: 2.5vw; position: absolute; height: 100%; width: 100%; opacity:1.0;">Players choose your hands</div>');
+      //both text
+      $( ".midBox" ).prepend( '<div class="playerText" id="both" style="text-align: center; font-size: 2.5vw; position: absolute; height: 100%; width: 100%; opacity:0.0;">Both Players need to be Ready!</div>' );
+      //ready text + prepend to mid box div
+      $( ".midBox" ).prepend( '<div class="playerText" id="ready" style="text-align: center; position: absolute; font-size: 2.5vw; height: 100%; width: 100%; opacity:0.0;"> -Ready- </div>');
+  // mid box end
+
+
+
+
+
   var smallImg1 = false;
   var smallImg2 = false;
   var smallImg3 = false;
@@ -168,7 +194,7 @@ function ready() {
           //prepend to .fight
 
           setTimeout(function(){
-                                $("<div class='winner'>" + winner + "</div>").appendTo("#fight");
+                                $("<div class='winner' style='height: 100%; width: 100%; text-align: center; line-height: 400px'>" + winner + "</div>").appendTo("#fight");
                                 $(".winner").animate({opacity: 1.0}, 400);
                                 $(".winner").animate({opacity: 0.0}, 400);
                                 $(".winner").animate({opacity: 1.0}, 400);
@@ -193,8 +219,8 @@ function ready() {
 
           setTimeout(function(){
 
-                                $("<img class='leftHand' src=" + left + " style='left: -10px; top: 100px; z-index: 53; width: 300px; position:absolute;' >").appendTo("#fight");
-                                $("<img class='rightHand'src=" + right + " style='right: 0px; top: 100px; z-index: 53; width: 300px; position: absolute;' >").appendTo("#fight");
+                                $("<img class='leftHand' src=" + left + " style='left: -10px; top: 100px; z-index: 53; width: 30%; position:absolute;' >").appendTo("#fight");
+                                $("<img class='rightHand'src=" + right + " style='right: -2px; top: 100px; z-index: 53; width: 30%; position: absolute;' >").appendTo("#fight");
 // left shake
                                 setTimeout(function(){
                                   $(".leftHand").animate({top: '400px'}, 200);
@@ -220,12 +246,12 @@ function ready() {
                                                       $(".leftHand").attr("src", tLeft);
                                                       $(".rightHand").attr("src", tRight);
                                                       $(".winner").remove();
-                                                    },2700)
+                                                    },2400)
 
-                                setTimeout(function(){
-                                                      $("<div class='winner' style='top:300px; height:200px; left: 365px; width:700px; '> Reload page to play again! </div>").appendTo("#fight");
-                                                    },4000)
-
+                              //   setTimeout(function(){
+                              //                         $("<div class='winner' style='top:300px; height:200px; left: 365px; width:700px; '> Reload page to play again! </div>").appendTo("#fight");
+                              //                       },4000)
+                              //
                               }, 2000);
 
 

@@ -17,27 +17,23 @@ body {
 /* /////////////////////// Special Scene //////////////////// */
 .winner {
   position: absolute;
-  font-size: 60px;
+  font-size: 10vw;
   color: white;
   font-family: "Impact", Charcoal, sans-serif;
   z-index: 55;
   opacity: 0.0;
-  top: 200px;
-  left: 37%;
-  height: auto;
-  width: auto;
 }
 
 .fightText {
   position: absolute;
+  text-align: center;
   color: white;
   font-size: 45px;
   opacity: 0.0;
-  left: 36.5%;
   font-family: "Impact", Charcoal, sans-serif;
   z-index: 0;
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
 }
 
 .battleGround {
@@ -62,10 +58,7 @@ body {
 .playerText {
   position: absolute;
   font-family: "Impact", Charcoal, sans-serif;
-  font-size: 60px;
   z-index: 5;
-  height: auto;
-  width: auto;
 }
 
 .smallImg1 {
@@ -153,8 +146,8 @@ body {
   position: absolute;
   text-align: center;
   vertical-align: middle;
-  top: 81%;
-  left: 50%;
+  top: 82%;
+  left: 25%;
   /* left 31% */
   width: 500px;
 	height: 50px;

@@ -32,7 +32,8 @@ $(document).ready(function() {
   var smallImg4 = false;
   var smallImg5 = false;
   var smallImg6 = false;
-  var players = [];
+  var player1;
+  var player2;
 
 $('.check1').css('opacity', 0.0);
 $('.check2').css('opacity', 0.0);
@@ -43,7 +44,7 @@ $('#ready').css('opacity', 0.0);
 // function that checks is both are ready
 
 function ready() {
-          if(players.length === 2) {
+          if(player1 && player2) {
               $('#choose').css('opacity', 0.0);
               $('#ready').animate({opacity: 1.0}, 700);
               $('#ready').animate({opacity: 0.0}, 700);
@@ -59,28 +60,27 @@ function ready() {
               $('#ready').animate({opacity: 0.0}, 700);
               $('#ready').animate({opacity: 1.0}, 700);
           };
-          console.log(players.length)
 }
 
 
 // set 1 // player 1
       $('.smallImg1').click(function clk() {
         smallImg1 = true;
-        players.push('rock');
+        player1 = 'rock';
         $('.check1').css('opacity', 1.0);
         ready();
         // console.log('clicked 1--> ' + smallImg1);
       });
       $('.smallImg2').click(function clk() {
         smallImg2 = true;
-        players.push('paper');
+        player1 = 'paper';
         $('.check1').css('opacity', 1.0);
         ready();
         // console.log('clicked 2--> ' + smallImg2)
       });
       $('.smallImg3').click(function clk() {
         smallImg3 = true;
-        players.push('scissors');
+        player1 = 'scissors';
         $('.check1').css('opacity',1.0);
         ready();
         // console.log('clicked 3--> ' + smallImg3)
@@ -89,30 +89,32 @@ function ready() {
 //set 2 // player 2
       $('.smallImg4').click(function clk() {
         smallImg4 = true;
-        players.push('rock');
+        player2 = 'rock';
         $('.check2').css('opacity',1.0);
         ready();
         // console.log('clicked 4--> ' + smallImg4)
         });
       $('.smallImg5').click(function clk() {
         smallImg5 = true;
-        players.push('paper');
+        player2 = 'paper';
         $('.check2').css('opacity',1.0);
         ready();
         // console.log('clicked 5--> ' + smallImg5)
         });
       $('.smallImg6').click(function clk() {
-        players.push('scissors');
-        players['smallImg6'] = 'scissors';
+        smallImg6 = true;
+        player2 = 'scissors';
         $('.check2').css("opacity",1.0);
         ready();
         // console.log('clicked 6--> ' + smallImg6)
         });
 
 // fight animation
+        console.log(player1);
+        console.log(player2);
 
       $(".buttonfx.doubletake").click(function fight() {
-        if(players.length === 2) {
+        if(player1 && player2) {
           $(".shock").animate({opacity: 1.0, 'z-index': 51}, 200);
           $(".shock").animate({opacity: 0.0}, 200);
           $(".shock").animate({opacity: 1.0}, 200);
@@ -147,48 +149,48 @@ function ready() {
 
           //loop for left side picture
           for(var i = 0; i < 4; i++) {
-            if(players[0] === 'rock') {
+            if(player1 === 'rock') {
               left = "photos/rockLeft.png";
-            } else if(players[0] === 'paper') {
+            } else if(player1 === 'paper') {
               left = "photos/paperLeft.png";
-            } else if(players[0] === 'scissors') {
+            } else if(player1 === 'scissors') {
               left = "photos/scissorsLeft.png";
             }
           }
 
           //loop for right side picture
           for(var i = 0; i < 4; i++) {
-            if(players[1] === 'rock') {
+            if(player2 === 'rock') {
               right = "photos/rockRight.png";
-            } else if(players[1] === 'paper') {
+            } else if(player2 === 'paper') {
               right = "photos/paperRight.png";
-            } else if(players[1] === 'scissors') {
+            } else if(player2 === 'scissors') {
               right = "photos/scissorsRight.png";
             }
           }
 
           // who won
           var winner = null;
-          if(players[0] === 'rock' && players[1] === 'paper') {
+          if(player1 === 'rock' && player2 === 'paper') {
             winner = 'Player 2 Wins!';
-          } else if(players[0] === 'paper' && players[1] === 'rock') {
+          } else if(player1 === 'paper' && player2 === 'rock') {
             winner = 'Player 1 Wins!';
-          } else if(players[0] === 'rock' && players[1] === 'rock') {
+          } else if(player1 === 'rock' && player2 === 'rock') {
             winner = 'Tie!';
-          } else if(players[0] === 'paper' && players[1] === 'paper') {
+          } else if(player1 === 'paper' && player2 === 'paper') {
             winner = 'Tie!';
-          } else if(players[0] === 'paper' && players[1] === 'scissors') {
+          } else if(player1 === 'paper' && player2 === 'scissors') {
             winner = 'Player 2 Wins!';
-          } else if(players[0] === 'scissors' && players[1] === 'paper') {
+          } else if(player1 === 'scissors' && player2 === 'paper') {
             winner = 'Player 1 Wins!';
-          } else if(players[0] === 'scissors' && players[1] === 'scissors') {
+          } else if(player1 === 'scissors' && player2 === 'scissors') {
             winner = 'Tie!';
-          } else if(players[0] === 'scissors' && players[1] === 'rock') {
+          } else if(player1 === 'scissors' && player2 === 'rock') {
             winner = 'Player 2 Wins!';
-          } else if(players[0] === 'rock' && players[1] === 'scissors') {
+          } else if(player1 === 'rock' && player2 === 'scissors') {
             winner = 'Player 1 Wins!';
           } else {
-            winner = 'error 22'
+            winner = 'Error 22 [Please Contact Developer]'
           }
 
           //prepend to .fight

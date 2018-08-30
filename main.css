@@ -154,7 +154,8 @@ body {
   text-align: center;
   vertical-align: middle;
   top: 81%;
-  left: 31%;
+  left: 50%;
+  /* left 31% */
   width: 500px;
 	height: 50px;
 	background: #FEE468;

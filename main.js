@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+var player1Score = 0;
+var player2Score = 0;
 //delete this after ---> $( "." ).prepend( "" );
 //make players and its contents
   //make players main div
@@ -22,8 +24,30 @@ $(document).ready(function() {
       $( ".midBox" ).prepend( '<div class="playerText" id="ready" style="text-align: center; position: absolute; font-size: 2.5vw; height: 100%; width: 100%; opacity:0.0;"> -Ready- </div>');
   // mid box end
 
+//reset boxes
+  $(".players").prepend('<div class="resetBoxes" style="height: 100%; width: 100%; position: absolute;"> </div>');
+  //player 1 box
+  $(".resetBoxes").prepend('<div class="player1Box" style=""> </div>');
+  //player 2 box
+  $(".resetBoxes").prepend('<div class="player2Box" style="" > </div>');
+//reset buttons
+  //player 1 reset button
+  $(".player1Box").prepend('<div class="reset1" style="" > </div>');
+  //score
+  $(".player1Box").prepend('<div class="score1" style="right: 1%; position:absolute; " >Score: ' + player1Score + '</div>');
+  //player 2 reset button
+  $(".player2Box").prepend('<div class="reset2" style=" " > </div>');
+  //score
+  $(".player2Box").prepend('<div class="score2" style="left: 1%; position:absolute; " >Score: ' + player2Score + '</div>');
 
-
+  //player 1 reset button click
+  $('.reset1').click(function reset() {
+    player1Score = 0;
+  });
+  //player 2 reset button
+  $('.reset2').click(function reset() {
+    player2Score = 0;
+  });
 
 
   var smallImg1 = false;
@@ -210,7 +234,15 @@ function ready() {
                                 $(".winner").animate({opacity: 1.0}, 400);
                                 $(".winner").animate({opacity: 0.0}, 400);
                                 $(".winner").animate({opacity: 1.0}, 400);
-                              }, 5500);
+                                if(winner === 'Player 1 Wins!') {
+                                  player1Score++;
+                                } else if (winner === 'Player 2 Wins!') {
+                                  player2Score++;
+                                }
+                                console.log(player1Score);
+                                console.log(player2Score);
+
+                                }, 5500);
 
                                 var tLeft = left;
                                 var tRight = right;

@@ -54,6 +54,34 @@ body {
 }
 
 /* //////////////////////// Players setup ////////////////////*/
+.score1 {
+  font-family: "Impact", Charcoal, sans-serif;
+  font-size: 3vw;
+}
+.score2 {
+  font-family: "Impact", Charcoal, sans-serif;
+  font-size: 3vw;
+}
+
+.player1Box {
+  left: 0px;
+  top: 82%;
+  height: 10%;
+  width: 30%;
+  background: #FEE468;
+  z-index: 5;
+  position: absolute;
+}
+.player2Box {
+  right: 0px;
+  top: 82%;
+  height: 10%;
+  width: 30%;
+  background: #FEE468;
+  z-index: 5;
+  position: absolute;
+}
+
 .playerText {
   position: absolute;
   font-family: "Impact", Charcoal, sans-serif;
@@ -150,7 +178,7 @@ body {
   top: 82%;
   /* left 31% */
   width: 40%;
-	height: 50px;
+	height: 7.14%;
 	background: #FEE468;
 }
 

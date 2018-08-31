@@ -9,9 +9,8 @@ body {
   max-width: 100%;
   max-height: 100%;
 }
-.background img {
+.img {
   max-width: 100%;
-  max-height: 100%;
   z-index: 1;
 }
 /* /////////////////////// Special Scene //////////////////// */
@@ -138,7 +137,7 @@ body {
 
 .checkBox {
   position: absolute;
-  height: 13%;
+  width: 7%;
   top: 25%;
 }
 
@@ -147,9 +146,8 @@ body {
   text-align: center;
   vertical-align: middle;
   top: 82%;
-  left: 25%;
   /* left 31% */
-  width: 500px;
+  width: 40%;
 	height: 50px;
 	background: #FEE468;
 }

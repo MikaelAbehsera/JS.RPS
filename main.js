@@ -5,15 +5,15 @@ $(document).ready(function() {
   //make players main div
   $(".background").prepend("<div class='players' style='width:100%; height:100%;'></div>");
   //make "players" text div and append to players main
-  $( ".players" ).prepend("<div class='playerText' style='z-index: 1; text-align: center; height: 100%; width: 100%; top:10%; font-size: 6vw;'>Players </div>");
+  $( ".players" ).prepend("<div class='playerText' style='z-index: 1; text-align: center; height: 100%; width: 100%;  line-height: 3; font-size: 6vw;'>Players </div>");
   // make check 1 and prepend to players main + make check 2 and prepend to players main
   $( ".players" ).prepend("<div> <img class='check1' src='photos/checkMark.png'> <img class='check2' src='photos/checkMark.png'> </div>");
   //make div for img call it "checkBoxImg" and prepend to players main
-  $( ".players" ).prepend('<div class="img1" style="height: 100%; width: 100%;"> <img class="checkBox" style="left: 40%;" src="photos/checkBox.png"></div>');
-  $( ".players" ).prepend('<div class="img2" style="height: 100%; width: 100%;"> <img class="checkBox" style="left: 55%;" src="photos/checkBox.png"></div>')
+  $( ".players" ).prepend('<div class="img1" style="height: 100%; width: 100%; "> <img class="checkBox" style="margin-left: 34%; margin-right: 59%; position:absolute;" src="photos/checkBox.png"></div>');
+  $( ".players" ).prepend('<div class="img2" style="height: 100%; width: 100%; "> <img class="checkBox" style="margin-left: 59%; margin-right: 34%; position:absolute;"  src="photos/checkBox.png"></div>')
   // make mid box and its contents prepend all to players main
   $( ".players" ).prepend( "<div class='midDiv' style='height: 100%; width: 100%; position:absolute;' ></div>" );
-  $( ".midDiv" ).prepend( "<div class='midBox' style='' ></div>" );
+  $( ".midDiv" ).prepend( "<div class='midBox' style=' margin-left: 30%; margin-right: 30%;' ></div>" );
       //choose text + prepend to mid box div
       $( ".midBox" ).prepend( '<div class="playerText" id="choose" style="text-align: center; font-size: 2.5vw; position: absolute; height: 100%; width: 100%; opacity:1.0;">Players choose your hands</div>');
       //both text

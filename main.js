@@ -110,8 +110,6 @@ function ready() {
         });
 
 // fight animation
-        console.log(player1);
-        console.log(player2);
 
       $(".buttonfx.doubletake").click(function fight() {
         if(player1 && player2) {
@@ -221,27 +219,27 @@ function ready() {
 
           setTimeout(function(){
 
-                                $("<img class='leftHand' src=" + left + " style='left: -10px; top: 100px; z-index: 53; width: 30%; position:absolute;' >").appendTo("#fight");
-                                $("<img class='rightHand'src=" + right + " style='right: -2px; top: 100px; z-index: 53; width: 30%; position: absolute;' >").appendTo("#fight");
+                                $("<img class='leftHand' src=" + left + " style='left: -10px; top: 15%; z-index: 53; width: 30%; position:absolute;' >").appendTo("#fight");
+                                $("<img class='rightHand'src=" + right + " style='right: -2px; top: 15%; z-index: 53; width: 30%; position: absolute;' >").appendTo("#fight");
 // left shake
                                 setTimeout(function(){
-                                  $(".leftHand").animate({top: '400px'}, 200);
-                                  $(".leftHand").animate({top: '100px'}, 200);
-                                  $(".leftHand").animate({top: '400px'}, 200);
-                                  $(".leftHand").animate({top: '100px'}, 200);
-                                  $(".leftHand").animate({top: '400px'}, 200);
-                                  $(".leftHand").animate({top: '100px'}, 200);
-                                  $(".leftHand").animate({top: '400px'}, 200);
+                                  $(".leftHand").animate({top: '55%'}, 200);
+                                  $(".leftHand").animate({top: '15%'}, 200);
+                                  $(".leftHand").animate({top: '55%'}, 200);
+                                  $(".leftHand").animate({top: '15%'}, 200);
+                                  $(".leftHand").animate({top: '55%'}, 200);
+                                  $(".leftHand").animate({top: '15%'}, 200);
+                                  $(".leftHand").animate({top: '55%'}, 200);
                                 },1000)
 // right shake
                                 setTimeout(function(){
-                                  $(".rightHand").animate({top: '400px'}, 200);
-                                  $(".rightHand").animate({top: '100px'}, 200);
-                                  $(".rightHand").animate({top: '400px'}, 200);
-                                  $(".rightHand").animate({top: '100px'}, 200);
-                                  $(".rightHand").animate({top: '400px'}, 200);
-                                  $(".rightHand").animate({top: '100px'}, 200);
-                                  $(".rightHand").animate({top: '400px'}, 200);
+                                  $(".rightHand").animate({top: '55%'}, 200);
+                                  $(".rightHand").animate({top: '15%'}, 200);
+                                  $(".rightHand").animate({top: '55%'}, 200);
+                                  $(".rightHand").animate({top: '15%'}, 200);
+                                  $(".rightHand").animate({top: '55%'}, 200);
+                                  $(".rightHand").animate({top: '15%'}, 200);
+                                  $(".rightHand").animate({top: '55%'}, 200);
                                 },999)
 // hands reveal
                                 setTimeout(function(){

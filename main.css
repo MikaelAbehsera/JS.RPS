@@ -123,16 +123,18 @@ body {
 /* ////////////////////// Middle ///////////////////////// */
 .check1 {
   position: absolute;
-  height: 12%;
+  width: 7%;
+  margin-left: 35%;
+  margin-right: 59%;
   top: 25%;
-  left: 40.8%;
 }
 
 .check2 {
   position: absolute;
-  height: 12%;
+  width: 7%;
+  margin-left: 60%;
+  margin-right: 33%;
   top: 25%;
-  left: 55.8%;
 }
 
 .checkBox {

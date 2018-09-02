@@ -1,18 +1,29 @@
 $(document).ready(function() {
 
-// if(Cookies.get('player1Score') === undefined) {
-//
-//
-// console.log();
-// } else {
-//
-//
-// console.log();
-// }
+if(cookies('player1Score') === undefined) {
+  var player1Score = 0;
 
 
-var player1Score = 0;
-var player2Score = 0;
+  console.log('It was undefined so I made it 0');
+} else {
+  var player1Score = cookies('player1Score');
+
+  console.log(player1Score);
+};
+
+if(cookies('player2Score') === undefined) {
+  var player2Score = 0;
+
+  console.log('It was undefined so I made it 0 again');
+} else {
+  var player2Score = cookies('player2Score');
+
+  console.log(player2Score);
+};
+//test what is returned
+console.log('before: ' + player1Score);
+console.log('before: ' + player2Score);
+
 
 //delete this after ---> $( "." ).prepend( "" );
 //make players and its contents
@@ -251,9 +262,13 @@ function ready() {
                                 } else if (winner === 'Player 2 Wins!') {
                                   player2Score++;
                                 }
-                                console.log(player1Score);
-                                console.log(player2Score);
-
+                                console.log('after: ' + player1Score);
+                                console.log('after: ' + player2Score);
+                                //update the cookies
+                                cookies({player1Score: player1Score});
+                                cookies({player2Score: player2Score});
+                                console.log(cookies('player1Score'));
+                                console.log(cookies('player2Score'));
                                 }, 5500);
 
                                 var tLeft = left;

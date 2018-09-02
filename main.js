@@ -64,6 +64,10 @@ console.log('before: ' + player2Score);
   $(".player2Box").prepend('<div class="score2" style="left: 1%; position:absolute; " >Score: ' + player2Score + '</div>');
 
   //player 1 + 2 reset button click
+  function refreshPage(){
+  window.location.reload();
+  }
+
   $('.resetButton').click(function reset() {
     if(cookies('player1Score') === undefined) {
       var player1Score = 0;
@@ -76,9 +80,6 @@ console.log('before: ' + player2Score);
       cookies({player2Score: num})
       var player2Score = cookies('player2Score');
     };
-    function refreshPage(){
-    window.location.reload();
-    }
     refreshPage();
   });
 
@@ -324,6 +325,9 @@ function ready() {
                                                       $(".leftHand").attr("src", tLeft);
                                                       $(".rightHand").attr("src", tRight);
                                                       $(".winner").remove();
+                                                      setTimeout(function(){
+                                                                            refreshPage();
+                                                      },7000)
                                                     },2400)
 
                               //   setTimeout(function(){

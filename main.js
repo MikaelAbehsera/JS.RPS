@@ -65,12 +65,31 @@ console.log('before: ' + player2Score);
 
   //player 1 reset button click
   $('.reset1').click(function reset() {
-    player1Score = 0;
+    if(cookies('player1Score') === undefined) {
+      var player1Score = 0;
+
+    } else {
+      var num = 0;
+      cookies({player1Score: num })
+      var player1Score = cookies('player1Score');
+
+    };
   });
+
   //player 2 reset button
   $('.reset2').click(function reset() {
-    player2Score = 0;
+    if(cookies('player1Score') === undefined) {
+      var player2Score = 0;
+
+    } else {
+      var num = 0;
+      cookies({player2Score: num})
+      var player2Score = cookies('player2Score');
+
+    };
   });
+
+
 
 
   var smallImg1 = false;
@@ -262,13 +281,19 @@ function ready() {
                                 } else if (winner === 'Player 2 Wins!') {
                                   player2Score++;
                                 }
+
+                                //checking the scores (this can be removed!)
                                 console.log('after: ' + player1Score);
                                 console.log('after: ' + player2Score);
+
                                 //update the cookies
                                 cookies({player1Score: player1Score});
                                 cookies({player2Score: player2Score});
+
+                                //checking the cookies (this can be removed!)
                                 console.log(cookies('player1Score'));
                                 console.log(cookies('player2Score'));
+
                                 }, 5500);
 
                                 var tLeft = left;
@@ -333,8 +358,5 @@ function ready() {
                               }, 3000);
         }
       });
-
-
-
 
 }); //end

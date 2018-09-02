@@ -1,7 +1,20 @@
 $(document).ready(function() {
 
+// if(Cookies.get('player1Score') === undefined) {
+//
+//
+// console.log();
+// } else {
+//
+//
+// console.log();
+// }
+Cookies.set('name', 'me');
+console.log(Cookies.get('name'));
+
 var player1Score = 0;
 var player2Score = 0;
+
 //delete this after ---> $( "." ).prepend( "" );
 //make players and its contents
   //make players main div

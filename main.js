@@ -76,6 +76,10 @@ console.log('before: ' + player2Score);
       cookies({player2Score: num})
       var player2Score = cookies('player2Score');
     };
+    function refreshPage(){
+    window.location.reload();
+    }
+    refreshPage();
   });
 
 

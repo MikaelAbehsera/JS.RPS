@@ -9,8 +9,7 @@ $(document).ready(function() {
 //
 // console.log();
 // }
-Cookies.set('name', 'me');
-console.log(Cookies.get('name'));
+
 
 var player1Score = 0;
 var player2Score = 0;

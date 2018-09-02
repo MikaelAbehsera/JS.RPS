@@ -327,7 +327,7 @@ function ready() {
                                                       $(".winner").remove();
                                                       setTimeout(function(){
                                                                             refreshPage();
-                                                      },7000)
+                                                      },4250)
                                                     },2400)
 
                               //   setTimeout(function(){

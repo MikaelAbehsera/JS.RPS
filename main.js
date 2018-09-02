@@ -55,11 +55,11 @@ console.log('before: ' + player2Score);
   $(".resetBoxes").prepend('<div class="player2Box" style="" > </div>');
 //reset buttons
   //player 1 reset button
-  $(".player1Box").prepend('<div class="reset1" style="" > </div>');
+  $(".player1Box").prepend('<div class="resetButton" style="left: 3%;" >Reset</div>');
   //score
   $(".player1Box").prepend('<div class="score1" style="right: 1%; position:absolute; " >Score: ' + player1Score + '</div>');
   //player 2 reset button
-  $(".player2Box").prepend('<div class="reset2" style=" " > </div>');
+  $(".player2Box").prepend('<div class="resetButton" style="right: 16%;" >Reset</div>');
   //score
   $(".player2Box").prepend('<div class="score2" style="left: 1%; position:absolute; " >Score: ' + player2Score + '</div>');
 
@@ -67,25 +67,29 @@ console.log('before: ' + player2Score);
   $('.reset1').click(function reset() {
     if(cookies('player1Score') === undefined) {
       var player1Score = 0;
+      var player2Score = 0;
 
     } else {
       var num = 0;
       cookies({player1Score: num })
       var player1Score = cookies('player1Score');
-
+      cookies({player2Score: num})
+      var player2Score = cookies('player2Score');
     };
   });
 
   //player 2 reset button
   $('.reset2').click(function reset() {
     if(cookies('player1Score') === undefined) {
+      var player1Score = 0;
       var player2Score = 0;
 
     } else {
       var num = 0;
+      cookies({player1Score: num })
+      var player1Score = cookies('player1Score');
       cookies({player2Score: num})
       var player2Score = cookies('player2Score');
-
     };
   });
 

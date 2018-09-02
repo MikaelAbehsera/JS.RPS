@@ -63,6 +63,20 @@ body {
   font-size: 3vw;
 }
 
+.resetButton {
+  top: 3%;
+  height: 70%;
+  width: 23.5%;
+  font-family: "Impact", Charcoal, sans-serif;
+  font-size: 2.85vw;
+  position: absolute;
+  background: #FB393E;
+}
+
+.resetButton:hover {
+  cursor: pointer;
+}
+
 .player1Box {
   left: 0px;
   top: 82%;

@@ -2,6 +2,16 @@ $(document).ready(function() {
 // Load photo's
 
 // loading screen animation
+  // load background
+  //$( ".background" ).prepend('<div class="loading" style="height: 100%; width: 100%; background: #FEE468;  position: absolute; "></div>');
+
+  //r p s animation
+  setTimeout(function(){
+
+  }, 100);
+  //by
+
+  //Mikael Abehsera
 
 
 // end for loading screen
@@ -31,7 +41,6 @@ console.log('before: ' + player1Score);
 console.log('before: ' + player2Score);
 
 
-//delete this after ---> $( "." ).prepend( "" );
 //make players and its contents
   //make players main div
   $(".background").prepend("<div class='players' style='width:100%; height:100%;'></div>");

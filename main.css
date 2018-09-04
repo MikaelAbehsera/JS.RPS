@@ -13,6 +13,13 @@ body {
   max-width: 100%;
   z-index: 1;
 }
+/*              Loading screen                      */
+.loading {
+  z-index: 50;
+}
+
+/*                loading end                       */
+
 /* /////////////////////// Special Scene //////////////////// */
 .winner {
   position: absolute;

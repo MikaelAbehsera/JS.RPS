@@ -1,5 +1,56 @@
-$(document).ready(function() {
+
 // Load photo's
+function preloader() {
+	if (document.images) {
+		var img1 = new Image();
+		var img2 = new Image();
+		var img3 = new Image();
+    var img4 = new Image();
+    var img5 = new Image();
+    var img6 = new Image();
+    var img7 = new Image();
+    var img8 = new Image();
+    var img9 = new Image();
+    var img10 = new Image();
+    var img11 = new Image();
+    var img12 = new Image();
+
+
+		img1.src = "photos/background.jpg";
+		img2.src = "photos/checkBox.png";
+		img3.src = "photos/checkMark.png";
+    img4.src = "photos/paper.png";
+    img5.src = "photos/paperLeft.png";
+    img6.src = "photos/paperRight.png";
+    img7.src = "photos/rock.png";
+    img8.src = "photos/rockLeft.png";
+    img9.src = "photos/rockRight.png";
+    img10.src = "photos/scissors.png";
+    img11.src = "photos/scissorsLeft.png";
+    img12.src = "photos/scissorsRight.png";
+	}
+}
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(preloader);
+
+//done preloading
+
+$(document).ready(function() {
+
+
+
 
 // loading screen animation
   // load background
@@ -9,16 +60,13 @@ $(document).ready(function() {
   setTimeout(function(){
 
   }, 100);
-  //by
-
-  //Mikael Abehsera
-
 
 // end for loading screen
 
+
 if(cookies('player1Score') === undefined) {
   var player1Score = 0;
-
+1
 
   console.log('It was undefined so I made it 0');
 } else {

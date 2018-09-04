@@ -1,5 +1,5 @@
 
-// Load photo's
+// Load photo's before page
 function preloader() {
 	if (document.images) {
 		var img1 = new Image();
@@ -44,51 +44,23 @@ function addLoadEvent(func) {
 	}
 }
 addLoadEvent(preloader);
-
 //done preloading
 
 $(document).ready(function() {
 
-
-
-
-// loading screen animation
-  // load background
-  //$( ".background" ).prepend('<div class="loading" style="height: 100%; width: 100%; background: #FEE468;  position: absolute; "></div>');
-
-  //r p s animation
-  setTimeout(function(){
-
-  }, 100);
-
-// end for loading screen
-
-
+//make cookies to keep scores and add reset button's
 if(cookies('player1Score') === undefined) {
   var player1Score = 0;
-1
-
-  console.log('It was undefined so I made it 0');
 } else {
   var player1Score = cookies('player1Score');
-
-  console.log(player1Score);
 };
 
 if(cookies('player2Score') === undefined) {
   var player2Score = 0;
-
-  console.log('It was undefined so I made it 0 again');
 } else {
   var player2Score = cookies('player2Score');
 
-  console.log(player2Score);
 };
-//test what is returned
-console.log('before: ' + player1Score);
-console.log('before: ' + player2Score);
-
-
 //make players and its contents
   //make players main div
   $(".background").prepend("<div class='players' style='width:100%; height:100%;'></div>");
@@ -149,7 +121,7 @@ console.log('before: ' + player2Score);
 
 
 
-
+  //declare images and put false for all
   var smallImg1 = false;
   var smallImg2 = false;
   var smallImg3 = false;
@@ -159,14 +131,16 @@ console.log('before: ' + player2Score);
   var player1;
   var player2;
 
+//make checks + message for both and ready situations
 $('.check1').css('opacity', 0.0);
 $('.check2').css('opacity', 0.0);
-//$('#choose').css('opacity', 0.0);
-$('#both').css('opacity', 0.0);
-$('#ready').css('opacity', 0.0);
+//$('#choose').css('opacity', 0.0); keep this commented out
+  //both
+  $('#both').css('opacity', 0.0);
+  //ready
+  $('#ready').css('opacity', 0.0);
 
-// function that checks is both are ready
-
+// function that checks is both players are ready
 function ready() {
           if(player1 && player2) {
               $('#choose').css('opacity', 0.0);
@@ -234,7 +208,6 @@ function ready() {
         });
 
 // fight animation
-
       $(".buttonfx.doubletake").click(function fight() {
         if(player1 && player2) {
           $(".shock").animate({opacity: 1.0, 'z-index': 51}, 200);
@@ -249,8 +222,8 @@ function ready() {
           $(".battleGround").animate({opacity: 1.0, 'z-index': 50}, 10);
           $(".shock").animate({opacity: 0.0,'z-index': 0}, 200);
 
-          //player1 vs player2 message
-            //add text and flash with loop
+//player1 vs player2 message
+  //add text and flash with loop
             setTimeout(function () {
                                       $(".fightText").animate({opacity: 1.0, 'z-index': 52}, 200);
                                       $(".fightText").animate({opacity: 0.0, 'z-index': 52}, 200);
@@ -269,7 +242,7 @@ function ready() {
           var left;
           var right;
 
-          //loop for left side picture
+//loop for left side picture
           for(var i = 0; i < 4; i++) {
             if(player1 === 'rock') {
               left = "photos/rockLeft.png";
@@ -280,7 +253,7 @@ function ready() {
             }
           }
 
-          //loop for right side picture
+//loop for right side picture
           for(var i = 0; i < 4; i++) {
             if(player2 === 'rock') {
               right = "photos/rockRight.png";
@@ -291,7 +264,7 @@ function ready() {
             }
           }
 
-          // who won
+// who won?
           var winner = null;
           if(player1 === 'rock' && player2 === 'paper') {
             winner = 'Player 2 Wins!';
@@ -315,8 +288,7 @@ function ready() {
             winner = 'Error 22 [Please Contact Developer]'
           }
 
-          //prepend to .fight
-
+//winner message
           setTimeout(function(){
                                 $("<div class='winner' style='height: 100%; width: 100%; text-align: center; line-height: 400px'>" + winner + "</div>").appendTo("#fight");
                                 $(".winner").animate({opacity: 1.0}, 400);
@@ -339,19 +311,16 @@ function ready() {
                                 } else if (winner === 'Player 2 Wins!') {
                                   player2Score++;
                                 }
-
                                 //checking the scores (this can be removed!)
-                                console.log('after: ' + player1Score);
-                                console.log('after: ' + player2Score);
-
-                                //update the cookies
+                                  // console.log('after: ' + player1Score);
+                                  // console.log('after: ' + player2Score);
+//update the cookies
                                 cookies({player1Score: player1Score});
                                 cookies({player2Score: player2Score});
 
                                 //checking the cookies (this can be removed!)
-                                console.log(cookies('player1Score'));
-                                console.log(cookies('player2Score'));
-
+                                  // console.log(cookies('player1Score'));
+                                  // console.log(cookies('player2Score'));
                                 }, 5500);
 
                                 var tLeft = left;
@@ -361,6 +330,7 @@ function ready() {
 
           setTimeout(function(){
 
+//make both hands
                                 $("<img class='leftHand' src=" + left + " style='left: -10px; top: 15%; z-index: 53; width: 30%; position:absolute;' >").appendTo("#fight");
                                 $("<img class='rightHand'src=" + right + " style='right: -2px; top: 15%; z-index: 53; width: 30%; position: absolute;' >").appendTo("#fight");
 // left shake
@@ -391,21 +361,10 @@ function ready() {
                                                       setTimeout(function(){
                                                                             refreshPage();
                                                       },4250)
-                                                    },2400)
-
-                              //   setTimeout(function(){
-                              //                         $("<div class='winner' style='top:300px; height:200px; left: 365px; width:700px; '> Reload page to play again! </div>").appendTo("#fight");
-                              //                       },4000)
-                              //
+                                           },2400)
                               }, 2000);
-
-
-
-
         } else {
-          //$('#choose').css('opacity', 0.0);
-          // $('#both').css('opacity', 0.0);
-          // output error message
+          // output both players are not ready message
           $("#choose").animate({opacity: 0.0}, 400);
           $("#both").animate({opacity: 1.0}, 400);
           $("#both").animate({opacity: 0.0}, 400);

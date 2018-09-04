@@ -1,4 +1,10 @@
 $(document).ready(function() {
+// Load photo's
+
+// loading screen animation
+
+
+// end for loading screen
 
 if(cookies('player1Score') === undefined) {
   var player1Score = 0;

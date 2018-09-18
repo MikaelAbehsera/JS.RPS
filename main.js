@@ -97,7 +97,7 @@ if(cookies('botScore') === undefined) {
   $(".resetBoxes").prepend('<div class="player2Box" style="" > </div>');
 //reset buttons
   //player 1 reset button
-  $(".player1Box").prepend('<div class="resetButton" style="left: 3%;" >Reset Score</div>');
+  $(".player1Box").prepend('<div class="resetButton" style="left: 3%; width: auto;" >Reset Score</div>');
   //score
   $(".player1Box").prepend('<div class="score1" style="right: 1%; position:absolute; " >Score: ' + player1Score + '</div>');
   //player 2 reset button

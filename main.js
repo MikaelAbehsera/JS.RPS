@@ -107,13 +107,16 @@ if(cookies('player2Score') === undefined) {
     if(cookies('player1Score') === undefined) {
       var player1Score = 0;
       var player2Score = 0;
+      var botScore = 0;
 
     } else {
       var num = 0;
-      cookies({player1Score: num })
+      cookies({player1Score: num });
       var player1Score = cookies('player1Score');
-      cookies({player2Score: num})
+      cookies({player2Score: num});
       var player2Score = cookies('player2Score');
+      cookies({botScore: num });l
+      var botScore = cookies('botScore');
     };
     refreshPage();
   });
@@ -121,6 +124,9 @@ if(cookies('player2Score') === undefined) {
 var bot = null;
 var you = null;
 $('.botButton').click(function reset() {
+  //change score 
+  $(".player2Box").prepend('<div class="score2" style="left: 1%; position:absolute; " >Score: ' + botScore + '</div>');
+  //end 
   function randomIntFromInterval(min,max)
   {
       return Math.floor(Math.random()*(max-min+1)+min);
@@ -356,14 +362,17 @@ function ready() {
                                   player1Score++;
                                 } else if (winner === 'Player 2 Wins!') {
                                   player2Score++;
+                                } else if (winner === 'Bot wins!') {
+                                  botScore++
                                 }
+
                                 //checking the scores (this can be removed!)
                                   // console.log('after: ' + player1Score);
                                   // console.log('after: ' + player2Score);
 //update the cookies
                                 cookies({player1Score: player1Score});
                                 cookies({player2Score: player2Score});
-
+                                cookies({botScore: botScore});
                                 //checking the cookies (this can be removed!)
                                   // console.log(cookies('player1Score'));
                                   // console.log(cookies('player2Score'));

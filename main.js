@@ -124,9 +124,6 @@ if(cookies('player2Score') === undefined) {
 var bot = null;
 var you = null;
 $('.botButton').click(function reset() {
-  //change score 
-  $(".player2Box").prepend('<div class="score2" style="left: 1%; position:absolute; " >Score: ' + botScore + '</div>');
-  //end 
   function randomIntFromInterval(min,max)
   {
       return Math.floor(Math.random()*(max-min+1)+min);
@@ -154,7 +151,10 @@ $('.botButton').click(function reset() {
   //bot was activated 
   bot = true;
   you = true;
-  // refreshPage();
+
+  //change score 
+  $(".score2").text("Score:" + botScore);
+  //end 
 });
 
 

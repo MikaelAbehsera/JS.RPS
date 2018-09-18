@@ -90,11 +90,11 @@ if(cookies('player2Score') === undefined) {
   $(".resetBoxes").prepend('<div class="player2Box" style="" > </div>');
 //reset buttons
   //player 1 reset button
-  $(".player1Box").prepend('<div class="resetButton" style="left: 3%;" >Reset</div>');
+  $(".player1Box").prepend('<div class="resetButton" style="left: 3%;" >Reset Score</div>');
   //score
   $(".player1Box").prepend('<div class="score1" style="right: 1%; position:absolute; " >Score: ' + player1Score + '</div>');
   //player 2 reset button
-  $(".player2Box").prepend('<div class="resetButton" style="right: 16%;" >Reset</div>');
+  $(".player2Box").prepend('<div class="botButton" style="right: 3%;" >Play Vs Bot</div>');
   //score
   $(".player2Box").prepend('<div class="score2" style="left: 1%; position:absolute; " >Score: ' + player2Score + '</div>');
 
@@ -117,7 +117,39 @@ if(cookies('player2Score') === undefined) {
     };
     refreshPage();
   });
+// when bot button is clicked bot will choose a random hand
+var bot = null;
+var you = null;
+$('.botButton').click(function reset() {
+  function randomIntFromInterval(min,max)
+  {
+      return Math.floor(Math.random()*(max-min+1)+min);
+  }
+  //change player 2 to bot 
 
+  //end 
+  var random = randomIntFromInterval(1,3);
+  if(random === 1) {
+            smallImg4 = true;
+            player2 = 'rock';
+            $('.check2').css('opacity',1.0);
+            ready();
+  } else if(random === 2) {
+            smallImg5 = true;
+            player2 = 'paper';
+            $('.check2').css('opacity',1.0);
+            ready();
+  } else if(random === 3) {
+            smallImg6 = true;
+            player2 = 'scissors';
+            $('.check2').css("opacity",1.0);
+            ready();
+  }
+  //bot was activated 
+  bot = true;
+  you = true;
+  // refreshPage();
+});
 
 
 
@@ -217,8 +249,6 @@ function ready() {
           $(".shock").animate({opacity: 1.0}, 200);
           $(".shock").animate({opacity: 0.0}, 200);
           $(".shock").animate({opacity: 1.0}, 200);
-          $(".shock").animate({opacity: 0.0}, 200);
-          $(".shock").animate({opacity: 1.0}, 200);
           $(".battleGround").animate({opacity: 1.0, 'z-index': 50}, 10);
           $(".shock").animate({opacity: 0.0,'z-index': 0}, 200);
 
@@ -230,15 +260,7 @@ function ready() {
                                       $(".fightText").animate({opacity: 1.0, 'z-index': 52}, 200);
                                       $(".fightText").animate({opacity: 0.0, 'z-index': 52}, 200);
                                       $(".fightText").animate({opacity: 1.0, 'z-index': 52}, 200);
-                                      $(".fightText").animate({opacity: 0.0, 'z-index': 52}, 200);
-                                      $(".fightText").animate({opacity: 1.0, 'z-index': 52}, 200);
-                                      $(".fightText").animate({opacity: 0.0, 'z-index': 52}, 200);
-                                      $(".fightText").animate({opacity: 1.0, 'z-index': 52}, 200);
-                                      $(".fightText").animate({opacity: 0.0, 'z-index': 52}, 200);
-                                      $(".fightText").animate({opacity: 1.0, 'z-index': 52}, 200);
-                                      $(".fightText").animate({opacity: 0.0, 'z-index': 52}, 200);
-                                      $(".fightText").animate({opacity: 1.0, 'z-index': 52}, 200);
-                                    }, 2300);
+                                    }, 2100);
           var left;
           var right;
 
@@ -267,23 +289,47 @@ function ready() {
 // who won?
           var winner = null;
           if(player1 === 'rock' && player2 === 'paper') {
-            winner = 'Player 2 Wins!';
+            if(!bot) {
+              winner = 'Player 2 Wins!';
+            } else {
+              winner = 'Bot Wins!';
+            }
           } else if(player1 === 'paper' && player2 === 'rock') {
-            winner = 'Player 1 Wins!';
+            if(!you) {
+              winner = 'Player 1 Wins!';
+            } else {
+              winner = 'You win!';
+            }
           } else if(player1 === 'rock' && player2 === 'rock') {
             winner = 'Tie!';
           } else if(player1 === 'paper' && player2 === 'paper') {
             winner = 'Tie!';
           } else if(player1 === 'paper' && player2 === 'scissors') {
-            winner = 'Player 2 Wins!';
+            if(!bot) {
+              winner = 'Player 2 Wins!';
+            } else {
+              winner = 'Bot Wins!';
+            }
           } else if(player1 === 'scissors' && player2 === 'paper') {
-            winner = 'Player 1 Wins!';
+            if(!you) {
+              winner = 'Player 1 Wins!';
+            } else {
+              winner = 'You win!';
+            }
           } else if(player1 === 'scissors' && player2 === 'scissors') {
             winner = 'Tie!';
           } else if(player1 === 'scissors' && player2 === 'rock') {
-            winner = 'Player 2 Wins!';
+            if(!bot) {
+              winner = 'Player 2 Wins!';
+            } else {
+              winner = 'Bot Wins!';
+            }
           } else if(player1 === 'rock' && player2 === 'scissors') {
-            winner = 'Player 1 Wins!';
+            if(!you) {
+              winner = 'Player 1 Wins!';
+            } else {
+              winner = 'You win!';
+            }
           } else {
             winner = 'Error 22 [Please Contact Developer]'
           }
@@ -342,7 +388,7 @@ function ready() {
                                   $(".leftHand").animate({top: '55%'}, 200);
                                   $(".leftHand").animate({top: '15%'}, 200);
                                   $(".leftHand").animate({top: '55%'}, 200);
-                                },1000)
+                                },300)
 // right shake
                                 setTimeout(function(){
                                   $(".rightHand").animate({top: '55%'}, 200);
@@ -352,7 +398,7 @@ function ready() {
                                   $(".rightHand").animate({top: '55%'}, 200);
                                   $(".rightHand").animate({top: '15%'}, 200);
                                   $(".rightHand").animate({top: '55%'}, 200);
-                                },999)
+                                },299)
 // hands reveal
                                 setTimeout(function(){
                                                       $(".leftHand").attr("src", tLeft);
@@ -360,7 +406,7 @@ function ready() {
                                                       $(".winner").remove();
                                                       setTimeout(function(){
                                                                             refreshPage();
-                                                      },4250)
+                                                      },4150)
                                            },2400)
                               }, 2000);
         } else {

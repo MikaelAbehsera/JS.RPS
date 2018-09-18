@@ -73,12 +73,23 @@ body {
 .resetButton {
   top: 3%;
   height: 70%;
-  width: 23.5%;
+  width: 48%;
   font-family: "Impact", Charcoal, sans-serif;
   font-size: 2.85vw;
   position: absolute;
   background: #FB393E;
 }
+
+.botButton {
+  top: 3%;
+  height: 70%;
+  width: 45%;
+  font-family: "Impact", Charcoal, sans-serif;
+  font-size: 2.85vw;
+  position: absolute;
+  background: #FB393E;
+}
+
 
 .resetButton:hover {
   cursor: pointer;

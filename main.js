@@ -362,7 +362,7 @@ function ready() {
                                 $(".winner").animate({opacity: 0.0}, 400);
                                 $(".winner").animate({opacity: 1.0}, 400);
                                 console.log("The winner is: " + winner)
-                                if(winner === 'Player 1 Wins!' && winner === "You Win!") {
+                                if(winner === 'Player 1 Wins!' || winner === "You Win!") {
                                   player1Score++;
                                   console.log(winner);
                                 } else if (winner === 'Bot Wins!') {

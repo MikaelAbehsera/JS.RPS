@@ -114,18 +114,14 @@ if(cookies('botScore') === undefined) {
     if(cookies('player1Score') === undefined) {
       var player1Score = 0;
       var player2Score = 0;
-      var botScore = 0;
-
     } else {
       var num = 0;
       cookies({player1Score: num });
       var player1Score = cookies('player1Score');
       cookies({player2Score: num});
       var player2Score = cookies('player2Score');
-      cookies({botScore: num });l
-      var botScore = cookies('botScore');
-    };
     refreshPage();
+    }
   });
 // when bot button is clicked bot will choose a random hand
 var bot = null;
@@ -311,7 +307,7 @@ function ready() {
             if(!you) {
               winner = 'Player 1 Wins!';
             } else {
-              winner = 'You win!';
+              winner = 'You Win!';
             }
           } else if(player1 === 'rock' && player2 === 'rock') {
             winner = 'Tie!';
@@ -327,7 +323,7 @@ function ready() {
             if(!you) {
               winner = 'Player 1 Wins!';
             } else {
-              winner = 'You win!';
+              winner = 'You Win!';
             }
           } else if(player1 === 'scissors' && player2 === 'scissors') {
             winner = 'Tie!';
@@ -341,7 +337,7 @@ function ready() {
             if(!you) {
               winner = 'Player 1 Wins!';
             } else {
-              winner = 'You win!';
+              winner = 'You Win!';
             }
           } else {
             winner = 'Error 22 [Please Contact Developer]'
@@ -365,12 +361,16 @@ function ready() {
                                 $(".winner").animate({opacity: 1.0}, 400);
                                 $(".winner").animate({opacity: 0.0}, 400);
                                 $(".winner").animate({opacity: 1.0}, 400);
-                                if(winner === 'Player 1 Wins!') {
+                                console.log("The winner is: " + winner)
+                                if(winner === 'Player 1 Wins!' && winner === "You Win!") {
                                   player1Score++;
-                                } else if (winner === 'Bot wins!') {
-                                  botScore++
+                                  console.log(winner);
+                                } else if (winner === 'Bot Wins!') {
+                                  botScore++;
+                                  console.log(winner);
                                 } else if (winner === 'Player 2 Wins!') {
                                   player2Score++;
+                                  console.log(winner);
                                 } 
 
                                 //checking the scores (this can be removed!)

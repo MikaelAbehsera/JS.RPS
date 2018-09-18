@@ -62,10 +62,10 @@ if(cookies('player2Score') === undefined) {
 
 };
 
-if(cookies('botScore') === undefined) {
+if(cookies("botScore") === undefined) {
   var botScore = 0;
 } else {
-  var botScore = cookies('botScore');
+  var botScore = cookies("botScore");
 
 };
 //make players and its contents
@@ -372,17 +372,14 @@ function ready() {
                                   player2Score++;
                                   console.log(winner);
                                 } 
-
-                                //checking the scores (this can be removed!)
-                                  // console.log('after: ' + player1Score);
-                                  // console.log('after: ' + player2Score);
 //update the cookies
                                 cookies({player1Score: player1Score});
                                 cookies({player2Score: player2Score});
                                 cookies({botScore: botScore});
-                                //checking the cookies (this can be removed!)
-                                  // console.log(cookies('player1Score'));
-                                  // console.log(cookies('player2Score'));
+                                // checking the cookies (this can be removed!)
+                                  console.log(cookies('player1Score'));
+                                  console.log(cookies('player2Score'));
+                                  console.log(cookies("botScore"));
                                 }, 5500);
 
                                 var tLeft = left;

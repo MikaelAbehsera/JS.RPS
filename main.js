@@ -61,6 +61,13 @@ if(cookies('player2Score') === undefined) {
   var player2Score = cookies('player2Score');
 
 };
+
+if(cookies('botScore') === undefined) {
+  var botScore = 0;
+} else {
+  var botScore = cookies('botScore');
+
+};
 //make players and its contents
   //make players main div
   $(".background").prepend("<div class='players' style='width:100%; height:100%;'></div>");
@@ -96,7 +103,7 @@ if(cookies('player2Score') === undefined) {
   //player 2 reset button
   $(".player2Box").prepend('<div class="botButton" style="right: 3%;" >Play Vs Bot</div>');
   //score
-  $(".player2Box").prepend('<div class="score2" style="left: 1%; position:absolute; " >Score: ' + player2Score + '</div>');
+  $(".player2Box").prepend('<div class="score2" style="z-index: 100;left: 1%; position:absolute;" >Score: ' + player2Score + '</div>');
 
   //player 1 + 2 reset button click
   function refreshPage(){
@@ -153,7 +160,7 @@ $('.botButton').click(function reset() {
   you = true;
 
   //change score 
-  $(".score2").text("Score:" + botScore);
+  $(".score2").text("Bot Score:" + botScore);
   //end 
 });
 

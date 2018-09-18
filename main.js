@@ -367,11 +367,11 @@ function ready() {
                                 $(".winner").animate({opacity: 1.0}, 400);
                                 if(winner === 'Player 1 Wins!') {
                                   player1Score++;
-                                } else if (winner === 'Player 2 Wins!') {
-                                  player2Score++;
                                 } else if (winner === 'Bot wins!') {
                                   botScore++
-                                }
+                                } else if (winner === 'Player 2 Wins!') {
+                                  player2Score++;
+                                } 
 
                                 //checking the scores (this can be removed!)
                                   // console.log('after: ' + player1Score);
@@ -422,7 +422,7 @@ function ready() {
                                                       $(".winner").remove();
                                                       setTimeout(function(){
                                                                             refreshPage();
-                                                      },4150)
+                                                      },4000)
                                            },2400)
                               }, 2000);
         } else {
